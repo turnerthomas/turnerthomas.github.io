@@ -5,7 +5,7 @@
     --text-color: #4A3C38; /* Deep Chocolate Brown (Body text) */
     --light-bg: #FAF9F6; /* Tuscan Off-White/Cream (Sections) */
     --white: #ffffff;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Cormorant Garamond', serif; /* ELEGANT NEW FONT */
     --font-body: 'Roboto', sans-serif;
 }
 
@@ -47,20 +47,22 @@ section {
 }
 
 .hero-content h1 {
-    font-size: 3.5em;
-    font-weight: 700;
+    font-size: 3em; /* Adjusted size for elegance */
+    font-weight: 400; /* Softer weight */
     color: var(--text-color); 
-    margin-bottom: 30px; 
+    margin-bottom: 5px; 
 }
 
-/* Styling for the 'Holistic Healing Arts' tagline */
+/* Styling for the 'Holistic Healing' tagline */
 .hero-content h2 {
-    font-family: var(--font-body); 
-    font-size: 1.5em; 
+    font-family: var(--font-heading); 
+    font-size: 1.3em; 
     font-weight: 300; 
     color: var(--text-color);
-    margin-top: -10px; 
-    margin-bottom: 30px;
+    margin-top: 0px; /* Slight adjustment */
+    margin-bottom: 40px;
+    letter-spacing: 2px; /* Stylish spacing */
+    text-transform: uppercase;
 }
 
 
@@ -161,10 +163,10 @@ section {
     margin: 0 auto 20px;
 }
 
-/* Styling for the new photo row (now a single image container) */
+/* Styling for the single centered photo container */
 .about-photos {
     display: flex; 
-    justify-content: center; /* Centers the single image */
+    justify-content: center; 
     margin-top: 40px;
     margin-bottom: 20px;
 }
@@ -173,7 +175,7 @@ section {
 .about-img {
     display: block; 
     width: 100%; 
-    max-width: 450px; /* Max size for desktop viewing */
+    max-width: 450px; 
     height: auto; 
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
