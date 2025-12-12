@@ -42,12 +42,12 @@ section {
     padding: 120px 20px 80px;
     text-align: center;
     
-    /* MANUKA FLOWER DESIGN - FIXED FILE NAME */
+    /* MANUKA FLOWER DESIGN - FINAL PLACEMENT */
     background-image: url('manukabobinsana.png'); 
     background-repeat: no-repeat;
-    background-position: top right; 
-    background-size: 200px auto; 
-    opacity: 0.8; 
+    background-position: top 90% right 20%; 
+    background-size: 350px auto; 
+    opacity: 0.6; 
 }
 
 .hero-content h1 {
@@ -179,24 +179,4 @@ section {
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
-    text-align: center;
-    padding: 25px;
-    font-size: 0.9em;
-}
-
-/* --- 7. Mobile Responsiveness --- */
-@media (max-width: 768px) {
-    .service-cards {
-        flex-direction: column;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    
-    /* Mobile: Stack photos vertically */
-    .about-photos {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+    text-align
