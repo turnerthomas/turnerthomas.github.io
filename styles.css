@@ -43,7 +43,7 @@ section {
     text-align: center;
     
     /* MANUKA FLOWER DESIGN */
-    background-image: url('manuka_design.png'); 
+    background-image: url('manukabobinsana.png'); 
     background-repeat: no-repeat;
     background-position: top right; 
     background-size: 200px auto; 
@@ -176,4 +176,5 @@ footer {
     .hero-content h1 {
         font-size: 2.5em;
     }
+
 }
