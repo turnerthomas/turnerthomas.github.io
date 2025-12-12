@@ -42,12 +42,12 @@ section {
     padding: 120px 20px 80px;
     text-align: center;
     
-    /* MANUKA FLOWER DESIGN - FINAL PLACEMENT */
+    /* MANUKA FLOWER DESIGN - FINAL FIX */
     background-image: url('manukabobinsana.png'); 
     background-repeat: no-repeat;
-    background-position: top 90% right 20%; 
-    background-size: 350px auto; 
-    opacity: 0.6; 
+    background-position: top right; 
+    background-size: 500px auto; 
+    opacity: 0.5; 
 }
 
 .hero-content h1 {
@@ -156,20 +156,23 @@ section {
 
 /* Styling for the new photo row */
 .about-photos {
-    display: flex; /* Arranges images in a row */
-    gap: 20px; /* Space between images */
-    justify-content: center; /* Centers the row on the page */
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
     margin-top: 40px;
     margin-bottom: 20px;
+    flex-wrap: wrap; 
 }
 
+/* FINAL PHOTO FIX: Preserve aspect ratio and give more width */
 .about-img {
-    width: 100%; /* Ensures image fills its container */
-    max-width: 300px; /* Limits size on desktop */
-    height: auto;
-    border-radius: 8px; /* Softens the corners */
+    width: 100%; 
+    max-width: 300px; 
+    height: auto; /* Crucial for preventing squishing */
+    border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 .contact {
     text-align: center;
@@ -179,4 +182,30 @@ section {
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
-    text-align
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+}
+
+/* --- 7. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    /* Mobile: Stack photos vertically */
+    .about-photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-img {
+        width: 100%; 
+        max-width: 400px; 
+        height: auto; 
+    }
+}
