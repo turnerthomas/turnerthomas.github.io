@@ -42,12 +42,8 @@ section {
     padding: 120px 20px 80px;
     text-align: center;
     
-    /* MANUKA FLOWER DESIGN - FINAL FIX */
-    background-image: url('manukabobinsana.png'); 
-    background-repeat: no-repeat;
-    background-position: top right; 
-    background-size: 500px auto; 
-    opacity: 0.5; 
+    /* MANUKA FLOWER DESIGN REMOVED */
+    background-image: none; 
 }
 
 .hero-content h1 {
@@ -164,12 +160,12 @@ section {
     flex-wrap: wrap; 
 }
 
-/* FINAL PHOTO FIX: Preserve aspect ratio, use flex-basis for spacing */
+/* FINAL PHOTO FIX: Flexible width, respects aspect ratio */
 .about-img {
-    flex-grow: 1; /* Allows image to fill available space */
-    width: 32%; /* Takes up roughly a third of the row space */
-    min-width: 250px; /* Minimum width before wrapping */
-    height: auto;
+    flex-grow: 1; /* Allow images to expand to fill space */
+    width: 30%; /* Suggests they take about a third of the row */
+    min-width: 280px; /* Gives them a solid minimum size */
+    height: auto; /* ABSOLUTELY VITAL: Prevents squishing by respecting original height */
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -205,7 +201,7 @@ footer {
     }
 
     .about-img {
-        width: auto; /* Let max-width rule dominate on mobile */
+        width: 100%; /* Photos take up full mobile width */
         max-width: 400px; 
         height: auto; 
     }
