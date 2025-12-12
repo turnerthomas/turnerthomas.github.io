@@ -45,13 +45,21 @@ section {
 /* --- 2. Hero Section (Header) --- */
 .hero-section {
     background-color: var(--light-bg);
-    /* Restored original top padding now that nav is gone */
     padding: 120px 20px 80px; 
     text-align: center;
     background-image: none; 
 }
 
-/* Styling for the large content below the nav */
+/* --- 2.1. Image Flair Styling --- */
+.title-flair {
+    display: block; 
+    margin: 0 auto 10px auto; 
+    width: 100%; 
+    max-width: 100px; 
+    height: auto;
+    opacity: 1.0; 
+}
+
 .hero-content h1 {
     font-size: 3.5em; 
     font-weight: 400; 
