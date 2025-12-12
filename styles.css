@@ -32,7 +32,7 @@ h2 {
 
 section {
     padding: 80px 20px;
-    max-width: 1100px; /* Increased max-width */
+    max-width: 1100px; 
     margin: 0 auto;
 }
 
@@ -53,7 +53,7 @@ section {
     margin-bottom: 30px; 
 }
 
-/* NEW: Styling for the 'Holistic Healing Arts' tagline */
+/* Styling for the 'Holistic Healing Arts' tagline */
 .hero-content h2 {
     font-family: var(--font-body); 
     font-size: 1.5em; 
@@ -157,24 +157,23 @@ section {
 
 .about-me p {
     text-align: left;
-    margin-bottom: 20px;
+    max-width: 700px;
+    margin: 0 auto 20px;
 }
 
-/* Styling for the new photo row */
+/* Styling for the new photo row (now a single image container) */
 .about-photos {
     display: flex; 
-    gap: 20px; 
-    justify-content: center; 
+    justify-content: center; /* Centers the single image */
     margin-top: 40px;
     margin-bottom: 20px;
-    flex-wrap: wrap; 
 }
 
-/* FINAL PHOTO FIX: Block display to respect natural aspect ratio */
+/* FINAL SINGLE PHOTO FIX: Centered and limited in size */
 .about-img {
     display: block; 
-    width: 31%; /* Increased percentage width */
-    min-width: 250px; 
+    width: 100%; 
+    max-width: 450px; /* Max size for desktop viewing */
     height: auto; 
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -208,15 +207,9 @@ footer {
         font-size: 1.2em;
     }
     
-    /* Mobile: Stack photos vertically */
-    .about-photos {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    /* Mobile: Single photo takes up full mobile width */
     .about-img {
-        width: 100%; 
-        max-width: 400px; 
+        max-width: 100%; 
         height: auto; 
     }
 }
