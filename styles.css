@@ -2,7 +2,7 @@
 :root {
     --primary-color: #8FBC8F;    /* Sage Green (CTA, primary accent, main title) */
     --secondary-color: #A0522D;  /* Sienna/Terracotta (Headers, strong accent) */
-    --light-brown: #B08D57;      /* NEW: Soft Earth Brown (For the tagline) */
+    --light-brown: #B08D57;      /* Soft Earth Brown (For the tagline) */
     --text-color: #4A3C38;       /* Deep Chocolate Brown (Body text, accessibility-friendly button text) */
     --light-bg: #FAF9F6;         /* Tuscan Off-White/Cream (Sections) */
     --white: #ffffff;
@@ -10,7 +10,7 @@
     --font-body: 'Roboto', sans-serif;
 }
 
-/* ADDED: Smooth Scrolling for better single-page navigation experience */
+/* Smooth Scrolling for better single-page navigation experience */
 html {
     scroll-behavior: smooth;
 }
@@ -45,25 +45,70 @@ section {
 /* --- 2. Hero Section (Header) --- */
 .hero-section {
     background-color: var(--light-bg);
-    padding: 120px 20px 80px;
+    padding-top: 0; /* Remove top padding since the nav bar has its own */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
     text-align: center;
     background-image: none; 
 }
 
-/* UPDATED: Title color is now the primary green */
+/* --- 2.1. Navigation Bar --- */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--white); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 100%;
+}
+
+.main-nav .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--secondary-color); 
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.main-nav .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 30px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    font-size: 1em;
+}
+
+.main-nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-cta {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    box-shadow: none; 
+}
+
+/* Styling for the large content below the nav */
 .hero-content h1 {
     font-size: 3.5em; 
     font-weight: 400; 
-    color: var(--primary-color); /* GREEN COLOR */
+    color: var(--primary-color); 
     margin-bottom: 5px; 
 }
 
-/* UPDATED: Tagline color is now the light brown */
 .hero-content h2 {
     font-family: var(--font-heading); 
     font-size: 1.3em; 
-    font-weight: 400; /* Adjusted to 400 */
-    color: var(--light-brown); /* LIGHT BROWN COLOR */
+    font-weight: 400; 
+    color: var(--light-brown); 
     margin-top: 0px; 
     margin-bottom: 40px;
     letter-spacing: 2px;
@@ -75,19 +120,19 @@ section {
 .cta-button {
     display: inline-block;
     background-color: var(--primary-color);
-    color: var(--text-color); /* ACCESSIBILITY FIX: Dark text on light green */
+    color: var(--text-color); 
     padding: 15px 35px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 700;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .cta-button:hover {
     background-color: var(--secondary-color);
-    color: var(--white); /* White text is fine on dark sienna hover color */
+    color: var(--white); 
 }
 
 /* --- 3.1. Primary CTA Styling (for the Hero Section) */
@@ -215,9 +260,20 @@ footer {
         max-width: 100%; 
         height: auto; 
     }
+    
+    /* Mobile Navigation Hide Links/Button */
+    .main-nav {
+        padding: 15px 20px;
+        justify-content: center; 
+    }
+    
+    .main-nav .nav-links,
+    .main-nav .nav-cta {
+        display: none; 
+    }
 }
 
-/* ADDED: Desktop layout for About Me section (Flexbox side-by-side) */
+/* Desktop layout for About Me section (Flexbox side-by-side) */
 @media (min-width: 769px) {
     .about-me {
         display: flex;
@@ -228,13 +284,13 @@ footer {
     }
 
     .about-me h2 {
-        text-align: left; /* Align header to the left on desktop */
+        text-align: left; 
     }
 
     .about-paragraph {
         flex: 1;
         max-width: 500px !important; 
-        margin: 0; /* Remove auto margins to let flex control space */
+        margin: 0; 
     }
 
     .about-photos {
