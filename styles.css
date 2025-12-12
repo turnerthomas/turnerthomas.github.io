@@ -160,12 +160,12 @@ section {
     flex-wrap: wrap; 
 }
 
-/* FINAL PHOTO FIX: Flexible width, respects aspect ratio */
+/* ABSOLUTE FINAL PHOTO FIX: Block display to respect natural aspect ratio */
 .about-img {
-    flex-grow: 1; /* Allow images to expand to fill space */
-    width: 30%; /* Suggests they take about a third of the row */
-    min-width: 280px; /* Gives them a solid minimum size */
-    height: auto; /* ABSOLUTELY VITAL: Prevents squishing by respecting original height */
+    display: block; 
+    width: 30%; 
+    min-width: 250px; 
+    height: auto; 
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -201,7 +201,7 @@ footer {
     }
 
     .about-img {
-        width: 100%; /* Photos take up full mobile width */
+        width: 100%; 
         max-width: 400px; 
         height: auto; 
     }
