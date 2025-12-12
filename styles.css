@@ -1,10 +1,10 @@
 /* --- 1. General Styling & Earth Tone Palette --- */
 :root {
-    --primary-color: #8FBC8F;    /* Sage Green (CTA, primary accent, main title) */
+    --primary-color: #8FBC8F;    /* Sage Green (CTA, primary accent, main title, About BG) */
     --secondary-color: #A0522D;  /* Sienna/Terracotta (Headers, strong accent) */
     --light-brown: #B08D57;      /* Soft Earth Brown (For the tagline) */
     --text-color: #4A3C38;       /* Deep Chocolate Brown (Body text, accessibility-friendly button text) */
-    --light-bg: #FAF9F6;         /* Tuscan Off-White/Cream (Sections) */
+    --light-bg: #FAF9F6;         /* Tuscan Off-White/Cream (Sections, light text in About) */
     --white: #ffffff;
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Roboto', sans-serif;
@@ -45,55 +45,10 @@ section {
 /* --- 2. Hero Section (Header) --- */
 .hero-section {
     background-color: var(--light-bg);
-    padding-top: 0; /* Remove top padding since the nav bar has its own */
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 80px;
+    /* Restored original top padding now that nav is gone */
+    padding: 120px 20px 80px; 
     text-align: center;
     background-image: none; 
-}
-
-/* --- 2.1. Navigation Bar --- */
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: var(--white); 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    max-width: 100%;
-}
-
-.main-nav .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5em;
-    font-weight: 500;
-    color: var(--secondary-color); 
-    text-decoration: none;
-    letter-spacing: 0.5px;
-}
-
-.main-nav .nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    margin-left: 30px;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    font-size: 1em;
-}
-
-.main-nav .nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.nav-cta {
-    padding: 10px 20px;
-    font-size: 0.9em;
-    box-shadow: none; 
 }
 
 /* Styling for the large content below the nav */
@@ -200,17 +155,25 @@ section {
 }
 
 
-/* --- 5. About & Contact Sections --- */
+/* --- 5. About & Contact Sections (NEW STYLING) --- */
 .about-me {
-    background-color: var(--light-bg);
+    background-color: var(--primary-color); /* PRIMARY GREEN BG */
+    color: var(--light-bg); /* Use light cream for text */
     text-align: center;
     border-top: 1px solid #e0e0e0;
 }
 
+.about-me h2 {
+    color: var(--light-bg); /* White/Cream header color */
+    text-align: center; 
+    margin-bottom: 40px;
+}
+
 .about-me p {
-    text-align: left;
-    max-width: 700px;
-    margin: 0 auto 20px;
+    color: var(--light-bg); /* White/Cream paragraph color */
+    text-align: center;
+    max-width: 800px; /* Wider text block */
+    margin: 0 auto 40px;
 }
 
 .about-photos {
@@ -223,10 +186,10 @@ section {
 .about-img {
     display: block; 
     width: 100%; 
-    max-width: 450px; 
+    max-width: 850px; /* Wider image */
     height: auto; 
     border-radius: 8px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .contact {
@@ -259,42 +222,5 @@ footer {
     .about-img {
         max-width: 100%; 
         height: auto; 
-    }
-    
-    /* Mobile Navigation Hide Links/Button */
-    .main-nav {
-        padding: 15px 20px;
-        justify-content: center; 
-    }
-    
-    .main-nav .nav-links,
-    .main-nav .nav-cta {
-        display: none; 
-    }
-}
-
-/* Desktop layout for About Me section (Flexbox side-by-side) */
-@media (min-width: 769px) {
-    .about-me {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 60px;
-        text-align: left;
-    }
-
-    .about-me h2 {
-        text-align: left; 
-    }
-
-    .about-paragraph {
-        flex: 1;
-        max-width: 500px !important; 
-        margin: 0; 
-    }
-
-    .about-photos {
-        flex: 1;
-        margin-top: 0;
     }
 }
