@@ -163,7 +163,7 @@ section {
 }
 
 
-/* --- 5. About & Contact Sections (NEW STYLING) --- */
+/* --- 5. About & Contact Sections --- */
 .about-me {
     background-color: var(--primary-color); /* PRIMARY GREEN BG */
     color: var(--light-bg); /* Use light cream for text */
@@ -184,20 +184,36 @@ section {
     margin: 0 auto 40px;
 }
 
+/* Photo Container Styling */
 .about-photos {
     display: flex; 
     justify-content: center; 
+    gap: 30px; /* Space between the two images */
+    flex-wrap: wrap; /* Allows photos to stack on small screens */
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-.about-img {
+/* Shared style for both images */
+.about-photos img {
     display: block; 
     width: 100%; 
-    max-width: 850px; /* Wider image */
+    max-width: 400px; /* Default max width for each photo */
     height: auto; 
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Specific style for the first image (can be slightly wider) */
+.about-img {
+    max-width: 500px; 
+}
+
+/* Specific style for the second image (can be slightly narrower or different effect) */
+.about-img-secondary {
+    border: 3px solid var(--light-bg); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    max-width: 350px;
 }
 
 .contact {
@@ -215,10 +231,12 @@ footer {
 
 /* --- 7. Mobile & Desktop Responsiveness --- */
 @media (max-width: 768px) {
+    /* Service Cards */
     .service-cards {
         flex-direction: column;
     }
 
+    /* Hero Text */
     .hero-content h1 {
         font-size: 2.5em;
     }
@@ -227,8 +245,13 @@ footer {
         font-size: 1.2em;
     }
     
-    .about-img {
+    /* About Images */
+    .about-photos {
+        flex-direction: column; /* Force images to stack vertically on mobile */
+        align-items: center;
+        gap: 20px;
+    }
+    .about-photos img {
         max-width: 100%; 
-        height: auto; 
     }
 }
