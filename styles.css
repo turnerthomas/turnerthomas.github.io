@@ -10,14 +10,11 @@
     --font-body: 'Roboto', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--white);
@@ -27,236 +24,118 @@ h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--secondary-color);
     text-align: center;
-    line-height: 1.2;
 }
 
-h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-}
+h2 { font-size: 2.5em; margin-bottom: 30px; }
 
-section {
-    padding: 100px 20px; /* Uniformly increased padding for better flow */
-    max-width: 1100px; 
-    margin: 0 auto;
-}
+section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
 
 /* --- 2. Hero Section --- */
 .hero-section {
     background-color: var(--light-bg);
-    padding: 120px 20px 100px; 
+    padding: 140px 20px 100px; 
     text-align: center;
 }
 
-.title-flair {
-    display: block; 
-    margin: 0 auto 10px auto; 
-    width: 100%; 
-    max-width: 100px;
-    height: auto;
-}
+.title-flair { display: block; margin: 0 auto 20px; max-width: 100px; height: auto; }
 
-.hero-content h1 {
-    font-size: 3.5em; 
-    font-weight: 400; 
-    color: var(--primary-color); 
-    margin-bottom: 5px; 
-}
+.hero-content h1 { font-size: 4em; color: var(--primary-color); margin-bottom: 10px; font-weight: 400; }
 
 .hero-content h2 {
-    font-family: var(--font-heading); 
-    font-size: 1.3em; 
-    font-weight: 400; 
-    color: var(--light-brown); 
-    margin: 0 0 40px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: var(--font-heading); font-size: 1.4em; 
+    color: var(--light-brown); letter-spacing: 2px; text-transform: uppercase;
 }
 
-/* --- 3. Resonance Section (Is This For You?) --- */
-.who-i-help {
-    background-color: var(--white);
-    text-align: center;
-}
+/* --- 3. Poetic Resonance Grid --- */
+.who-i-help { background-color: var(--white); }
 
 .who-i-help .section-intro {
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 40px;
+    font-size: 1.2em; text-align: center; max-width: 750px; margin: 0 auto 60px;
+    font-family: var(--font-heading); color: var(--text-color); font-style: italic;
 }
 
-.support-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 950px;
+.resonance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 60px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.support-tags span {
-    background: var(--light-bg);
-    border: 1px solid var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-size: 0.95em;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.support-tags span:hover {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-/* --- 4. Buttons --- */
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--text-color); 
-    padding: 15px 45px;
-    border-radius: 35px; 
-    text-decoration: none;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    cursor: pointer;
-    font-family: var(--font-body);
-}
-
-.cta-button:hover {
-    background-color: var(--secondary-color);
-    color: var(--white); 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* --- 5. Services --- */
-.services {
-    background-color: var(--light-bg);
-    text-align: center;
-}
-
-.section-intro {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto 50px;
-}
-
-.service-cards {
+.resonance-item {
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap; 
-    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
 }
+
+.leaf-icon {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.resonance-item p { margin: 0; font-size: 1.05em; line-height: 1.5; }
+
+.resonance-item strong { display: block; color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.25em; margin-bottom: 4px; }
+
+.resonance-item em { color: var(--light-brown); font-size: 0.95em; }
+
+/* --- 4. Services --- */
+.services { background-color: var(--light-bg); text-align: center; }
+
+.service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
 
 .card {
-    flex: 1;
-    min-width: 250px;
-    max-width: 320px;
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--primary-color);
+    flex: 1; min-width: 280px; max-width: 320px;
+    background-color: var(--white); padding: 40px 30px; border-radius: 12px;
+    text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border-top: 5px solid var(--primary-color);
 }
 
-.card h3 {
-    font-weight: 700;
-    color: var(--text-color);
-    margin: 0 0 10px; 
+.card h3 { text-align: left; font-size: 1.5em; margin: 0 0 10px; }
+
+.card h4 { font-style: italic; color: var(--secondary-color); margin-bottom: 20px; font-weight: 400; }
+
+/* --- 5. About Section --- */
+.about-me { background-color: var(--primary-color); color: var(--light-bg); text-align: center; }
+
+.about-me h2, .about-me p { color: var(--light-bg); }
+
+.about-paragraph { max-width: 850px; margin: 0 auto 40px; font-size: 1.1em; }
+
+.about-photos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+.about-photos img { width: 100%; max-width: 450px; border-radius: 10px; }
+
+/* --- 6. Form & Buttons --- */
+.cta-button {
+    display: inline-block; background-color: var(--primary-color);
+    color: var(--text-color); padding: 18px 50px; border-radius: 40px; 
+    text-decoration: none; font-weight: 700; transition: 0.3s;
+    text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer;
 }
 
-.card h4 {
-    font-weight: 400; 
-    color: var(--secondary-color); 
-    margin: -10px 0 15px;
-    font-size: 1em; 
-    font-style: italic; 
-}
-
-/* --- 6. About Section --- */
-.about-me {
-    background-color: var(--primary-color);
-    color: var(--light-bg);
-    text-align: center;
-}
-
-.about-me h2, .about-me p {
-    color: var(--light-bg);
-}
-
-.about-photos {
-    display: flex; 
-    justify-content: center; 
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.about-photos img {
-    width: 100%; 
-    max-width: 400px;
-    height: auto; 
-    border-radius: 8px; 
-}
-
-/* --- 7. Form Styling --- */
-.form-intro {
-    text-align: center;
-    color: var(--primary-color);
-    font-weight: 500;
-    max-width: 600px;
-    margin: 0 auto 20px;
-    font-size: 1.1em;
-}
+.cta-button:hover { background-color: var(--secondary-color); color: var(--white); transform: translateY(-3px); }
 
 .simple-form {
-    max-width: 600px;
-    margin: 40px auto;
-    text-align: left;
-    background-color: var(--light-bg);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 650px; margin: 50px auto; text-align: left;
+    background-color: var(--light-bg); padding: 50px; border-radius: 20px;
 }
 
-.form-group {
-    margin-bottom: 25px;
+.form-group { margin-bottom: 25px; }
+
+.form-group label { display: block; margin-bottom: 8px; font-family: var(--font-heading); font-size: 1.4em; color: var(--secondary-color); }
+
+.form-group input, .form-group textarea {
+    width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-family: var(--font-heading);
-    font-size: 1.3em;
-    color: var(--secondary-color);
-}
+/* --- 7. Footer --- */
+footer { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 40px 20px; }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid rgba(143, 188, 143, 0.5);
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-/* --- 8. Footer --- */
-footer {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 25px;
-}
-
-/* --- 9. Responsiveness --- */
+/* --- 8. Mobile Fixes --- */
 @media (max-width: 768px) {
-    .service-cards { flex-direction: column; align-items: center; }
-    .hero-content h1 { font-size: 2.5em; }
-    .about-photos { flex-direction: column; align-items: center; }
+    .resonance-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-content h1 { font-size: 2.8em; }
+    h2 { font-size: 2em; }
 }
