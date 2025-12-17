@@ -6,7 +6,7 @@
     --text-color: #4A3C38;       /* Deep Chocolate Brown */
     --light-bg: #FAF9F6;         /* Tuscan Off-White/Cream */
     --white: #ffffff;
-    --bobinsana-pink: #E9967A;   /* Soft Salmon/Pink */
+    --bobinsana-pink: #D46A9B;   /* NEW: Vibrant Floral Rose Pink */
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Roboto', sans-serif;
 }
@@ -47,7 +47,7 @@ section { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
     color: var(--light-brown); letter-spacing: 2px; text-transform: uppercase;
 }
 
-/* --- 3. Slim & Circled Interactive Section --- */
+/* --- 3. Ultra-Slim & Floral Interactive Section --- */
 .who-i-help { 
     background-color: var(--white); 
     padding: 10px 0; 
@@ -75,13 +75,12 @@ section { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
     font-size: 2.1em;
 }
 
-/* The Sleek Circled Icon */
 .sleek-plus-circle {
     font-size: 20px;
     color: var(--light-brown);
     width: 34px;
     height: 34px;
-    border: 1px solid rgba(176, 141, 87, 0.2); /* Very light circle */
+    border: 1px solid rgba(176, 141, 87, 0.2); 
     border-radius: 50%;
     display: flex;
     align-items: center;
