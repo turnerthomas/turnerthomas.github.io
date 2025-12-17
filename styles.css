@@ -47,55 +47,77 @@ section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
     color: var(--light-brown); letter-spacing: 2px; text-transform: uppercase;
 }
 
-/* --- 3. Master Interactive Section --- */
-.who-i-help { background-color: var(--white); text-align: center;}
+/* --- 3. Interactive Is This For You Section --- */
+.who-i-help { background-color: var(--white); }
 
 .container-narrow { max-width: 800px; margin: 0 auto; }
 
-.master-reveal summary {
-    list-style: none;
+/* The Header Card - Mobile Friendly */
+.gate-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
+    list-style: none;
     outline: none;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
 }
 
-.master-reveal summary::-webkit-details-marker { display: none; }
+.gate-header::-webkit-details-marker { display: none; }
+
+/* Desktop hover effect */
+@media (hover: hover) {
+    .gate-header:hover {
+        background-color: var(--light-bg);
+        transform: translateY(-3px);
+    }
+}
 
 .section-title-green {
     color: var(--primary-color) !important;
-    margin-bottom: 5px;
-    transition: transform 0.3s ease;
+    margin-bottom: 10px !important;
 }
 
-.master-reveal[open] .section-title-green {
-    transform: scale(1.05);
-}
-
-.click-hint {
-    font-family: var(--font-heading);
+/* Icon Styling */
+.plus-icon {
+    font-size: 24px;
     color: var(--light-brown);
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
 }
 
-.master-reveal[open] .click-hint { display: none; }
+.interactive-gate[open] .plus-icon {
+    transform: rotate(45deg);
+    background-color: var(--bobinsana-pink);
+    color: white;
+    border-color: var(--bobinsana-pink);
+}
 
+/* Content Reveal Animation */
 .revealed-content {
-    animation: slideDown 0.6s ease-out;
+    animation: reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px 0;
 }
 
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 .who-i-help .section-intro {
-    font-size: 1.2em; text-align: center; max-width: 750px; margin: 20px auto 60px;
+    font-size: 1.2em; text-align: center; max-width: 750px; margin: 0 auto 50px;
     font-family: var(--font-heading); color: var(--text-color); font-style: italic;
 }
 
-.resonance-point { margin-bottom: 40px; }
+.resonance-point { margin-bottom: 40px; text-align: center; }
 
 .resonance-point h3 {
     font-size: 1.8em; color: var(--bobinsana-pink); margin-bottom: 5px;
