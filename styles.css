@@ -36,7 +36,7 @@ h2 {
 }
 
 section {
-    padding: 80px 20px;
+    padding: 100px 20px; /* Uniformly increased padding for better flow */
     max-width: 1100px; 
     margin: 0 auto;
 }
@@ -44,7 +44,7 @@ section {
 /* --- 2. Hero Section --- */
 .hero-section {
     background-color: var(--light-bg);
-    padding: 120px 20px 80px; 
+    padding: 120px 20px 100px; 
     text-align: center;
 }
 
@@ -68,8 +68,7 @@ section {
     font-size: 1.3em; 
     font-weight: 400; 
     color: var(--light-brown); 
-    margin-top: 0px; 
-    margin-bottom: 40px;
+    margin: 0 0 40px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -80,23 +79,30 @@ section {
     text-align: center;
 }
 
+.who-i-help .section-intro {
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
 .support-tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    max-width: 900px;
-    margin: 30px auto 0;
+    gap: 15px;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .support-tags span {
     background: var(--light-bg);
     border: 1px solid var(--primary-color);
     color: var(--text-color);
-    padding: 8px 20px;
-    border-radius: 25px;
+    padding: 10px 24px;
+    border-radius: 30px;
     font-size: 0.95em;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .support-tags span:hover {
@@ -104,7 +110,7 @@ section {
     color: var(--white);
 }
 
-/* --- 4. Buttons (Pill Shape) --- */
+/* --- 4. Buttons --- */
 .cta-button {
     display: inline-block;
     background-color: var(--primary-color);
@@ -126,11 +132,6 @@ section {
     color: var(--white); 
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.primary-cta {
-    font-size: 1.1em; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* --- 5. Services --- */
@@ -165,21 +166,15 @@ section {
 }
 
 .card h3 {
-    font-family: var(--font-body);
     font-weight: 700;
     color: var(--text-color);
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 10px; 
+    margin: 0 0 10px; 
 }
 
 .card h4 {
-    font-family: var(--font-body);
     font-weight: 400; 
     color: var(--secondary-color); 
-    text-align: left;
-    margin-top: -10px; 
-    margin-bottom: 15px;
+    margin: -10px 0 15px;
     font-size: 1em; 
     font-style: italic; 
 }
@@ -208,7 +203,6 @@ section {
     max-width: 400px;
     height: auto; 
     border-radius: 8px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* --- 7. Form Styling --- */
@@ -249,7 +243,6 @@ section {
     padding: 15px;
     border: 1px solid rgba(143, 188, 143, 0.5);
     border-radius: 8px;
-    font-family: var(--font-body);
     box-sizing: border-box;
 }
 
@@ -259,7 +252,6 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 25px;
-    font-size: 0.9em;
 }
 
 /* --- 9. Responsiveness --- */
