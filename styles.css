@@ -80,7 +80,7 @@ section {
     background-color: var(--primary-color);
     color: var(--text-color); 
     padding: 15px 45px;
-    border-radius: 35px; /* Gentle Pill Shape */
+    border-radius: 35px; 
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -182,6 +182,15 @@ section {
 }
 
 /* --- 6. Form Styling --- */
+.form-intro {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-size: 1.1em;
+}
+
 .simple-form {
     max-width: 600px;
     margin: 40px auto;
@@ -212,13 +221,6 @@ section {
     border-radius: 8px;
     font-family: var(--font-body);
     box-sizing: border-box;
-}
-
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background-color: #fff;
 }
 
 /* --- 7. Footer --- */
