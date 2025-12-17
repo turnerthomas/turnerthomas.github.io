@@ -1,199 +1,295 @@
 /* --- 1. General Styling --- */
+
 :root {
+
     --primary-color: #8FBC8F;    
+
     --secondary-color: #A0522D;  
+
     --light-brown: #B08D57;      
+
     --text-color: #4A3C38;       
+
     --light-bg: #FAF9F6;         
+
     --white: #ffffff;
+
     --bobinsana-pink: #D46A9B;   /* Vibrant Floral Rose */
+
     --font-heading: 'Cormorant Garamond', serif;
+
     --font-body: 'Roboto', sans-serif;
+
 }
+
+
 
 html { scroll-behavior: smooth; }
 
+
+
 body {
+
     font-family: var(--font-body);
+
     margin: 0; padding: 0;
+
     line-height: 1.7;
+
     color: var(--text-color);
+
     background-color: var(--white);
+
 }
 
+
+
 h1, h2, h3 {
+
     font-family: var(--font-heading);
+
     color: var(--secondary-color);
+
     text-align: center;
+
 }
+
+
 
 h2 { font-size: 2.5em; margin-bottom: 20px; }
 
+
+
 section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
 
+
+
 /* --- 2. Hero Section & Button Styling --- */
+
 .hero-section {
+
     background-color: var(--light-bg);
+
     padding: 120px 20px 60px; 
+
     text-align: center;
+
 }
+
+
 
 .title-flair { display: block; margin: 0 auto 20px; max-width: 100px; height: auto; }
 
+
+
 .hero-content h1 { font-size: 4em; color: var(--primary-color); margin-bottom: 10px; font-weight: 400; }
 
+
+
 .hero-content h2 {
+
     font-family: var(--font-heading); font-size: 1.4em; 
+
     color: var(--light-brown); letter-spacing: 2px; text-transform: uppercase;
-    margin-bottom: 30px; 
+
+    margin-bottom: 30px; /* Space before button */
+
 }
+
+
+
+/* Button Styling Restored */
 
 .cta-button {
+
     display: inline-block;
+
     background-color: var(--primary-color);
+
     color: var(--white);
+
     padding: 18px 40px;
+
     border-radius: 40px;
+
     text-decoration: none;
+
     font-weight: 700;
+
     transition: 0.3s;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
+
     border: none;
+
     cursor: pointer;
+
     font-family: var(--font-body);
+
 }
+
+
 
 .cta-button:hover {
+
     background-color: var(--secondary-color);
+
     transform: translateY(-3px);
+
 }
+
+
 
 /* --- 3. Ultra-Slim Interactive Section --- */
+
 .who-i-help { background-color: var(--white); padding: 10px 0; }
+
 .gate-header { cursor: pointer; list-style: none; outline: none; padding: 10px 0; }
+
 .gate-header::-webkit-details-marker { display: none; }
+
 .header-inline { display: flex; justify-content: center; align-items: center; gap: 15px; }
+
 .section-title-green { color: var(--primary-color) !important; margin: 0 !important; font-size: 2.1em; }
 
+
+
 .sleek-plus-circle {
+
     font-size: 20px;
+
     color: var(--light-brown);
+
     width: 34px;
+
     height: 34px;
+
     border: 1px solid rgba(176, 141, 87, 0.2); 
+
     border-radius: 50%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     transition: all 0.4s ease;
+
     flex-shrink: 0;
+
 }
 
-.interactive-gate[open] .sleek-plus-circle,
-.offering-card[open] .sleek-plus-circle {
+
+
+.interactive-gate[open] .sleek-plus-circle {
+
     transform: rotate(45deg);
+
     background-color: var(--bobinsana-pink);
+
     color: white;
+
     border-color: var(--bobinsana-pink);
+
 }
+
+
 
 .revealed-content { animation: reveal 0.5s ease-out; padding-top: 30px; }
+
 @keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
 
+
+
 .who-i-help .section-intro {
+
     font-size: 1.2em; text-align: center; max-width: 700px; margin: 0 auto 40px;
+
     font-family: var(--font-heading); color: var(--text-color); font-style: italic;
+
 }
+
+
 
 .resonance-point { margin-bottom: 35px; text-align: center; }
+
 .resonance-point h3 { font-size: 1.8em; color: var(--bobinsana-pink); margin-bottom: 5px; }
+
 .resonance-point p { font-size: 1.1em; color: var(--light-brown); font-style: italic; margin: 0; }
 
-/* --- 4. NEW OFFERINGS SECTION STYLING --- */
-.offerings { background-color: var(--light-bg); text-align: center; padding: 80px 20px; }
-.section-title-offering { font-size: 2.5em; margin-bottom: 40px; }
 
-.offering-grid {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1100px;
-    margin: 0 auto;
+
+/* --- 4. Services --- */
+
+.services { background-color: var(--light-bg); text-align: center; }
+
+.service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+
+.card {
+
+    flex: 1; min-width: 280px; max-width: 320px;
+
+    background-color: var(--white); padding: 40px 30px; border-radius: 12px;
+
+    text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+
+    border-top: 5px solid var(--primary-color);
+
 }
 
-.offering-card {
-    flex: 1;
-    min-width: 320px;
-    max-width: 480px;
-    background-color: var(--white);
-    border-radius: 15px;
-    text-align: left;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    list-style: none;
-    height: fit-content;
-}
+.card h3 { text-align: left; font-size: 1.5em; margin: 0 0 10px; color: var(--secondary-color); }
 
-.offering-card-header { padding: 40px 30px; cursor: pointer; list-style: none; outline: none; }
-.offering-card-header::-webkit-details-marker { display: none; }
+.card h4 { font-style: italic; color: var(--light-brown); margin-bottom: 20px; font-weight: 400; }
 
-.offering-pink-title { color: var(--bobinsana-pink) !important; text-align: left; font-size: 2.2em; margin: 0 0 10px; }
-.offering-title-area h3 { text-align: left; font-size: 2.2em; margin: 0 0 10px; color: var(--secondary-color); }
 
-.offering-subtitle {
-    font-family: var(--font-heading);
-    font-style: italic;
-    color: var(--light-brown);
-    font-size: 1.2em;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.offering-footer-hint {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.explore-hint {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--light-brown);
-    margin: 0;
-}
-
-.offering-inner-padding { padding: 0 40px 40px 40px; }
-
-.offering-ritual-point { margin-bottom: 25px; border-left: 2px solid var(--primary-color); padding-left: 20px; }
-.offering-ritual-point h3 { text-align: left; font-size: 1.5em; margin: 0 0 5px; color: var(--secondary-color); }
-.offering-focus { font-weight: 700; text-transform: uppercase; font-size: 0.8em; color: var(--light-brown); margin-bottom: 8px; }
 
 /* --- 5. About Section --- */
+
 .about-me { background-color: var(--primary-color); color: var(--light-bg); text-align: center; }
+
 .about-me h2 { color: var(--white); }
+
 .about-paragraph { max-width: 850px; margin: 0 auto 40px; font-size: 1.1em; color: var(--white); }
+
 .about-photos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
 .about-photos img { width: 100%; max-width: 450px; border-radius: 10px; }
 
+
+
 /* --- 6. Form & Buttons --- */
+
 .simple-form {
+
     max-width: 650px; margin: 0 auto; text-align: left;
+
     background-color: var(--light-bg); padding: 50px; border-radius: 20px;
+
 }
+
 .form-group label { display: block; margin-bottom: 8px; font-family: var(--font-heading); font-size: 1.4em; color: var(--secondary-color); }
+
 .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
 
+
+
 /* --- 7. Footer --- */
+
 footer { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 40px 20px; }
 
+
+
 /* --- 8. Mobile Fixes --- */
+
 @media (max-width: 768px) {
+
     .hero-content h1 { font-size: 2.8em; }
+
     .header-inline { gap: 10px; }
+
     .section-title-green { font-size: 1.8em; }
-    .offering-card { min-width: 100%; }
+
 }
