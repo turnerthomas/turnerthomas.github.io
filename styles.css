@@ -303,3 +303,14 @@ footer { background-color: var(--secondary-color); color: var(--white); text-ali
     font-weight: 700;
     text-decoration: underline;
 }
+
+/* --- 3b. What I Offer (Alignment) --- */
+.what-i-offer { 
+    background-color: var(--white); 
+    padding: 0 0 20px 0; /* Removed top padding to pull it closer to the section above */
+}
+
+/* This ensures both gates look consistent */
+.what-i-offer .resonance-point h3 {
+    color: var(--primary-color); /* You can change this to --bobinsana-pink if you prefer the pop of color */
+}
