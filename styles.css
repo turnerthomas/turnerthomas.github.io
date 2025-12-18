@@ -298,3 +298,8 @@ footer { background-color: var(--secondary-color); color: var(--white); text-ali
     .section-title-green { font-size: 1.8em; }
 
 }
+
+.emphasized-you {
+    font-weight: 700;
+    text-decoration: underline;
+}
