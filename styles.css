@@ -140,7 +140,14 @@ section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
 
 }
 
+.pink-cta {
+    background-color: var(--bobinsana-pink);
+}
 
+.pink-cta:hover {
+    background-color: var(--secondary-color); /* Changes to brown on hover to match your style */
+    transform: translateY(-3px);
+}
 
 /* --- 3. Ultra-Slim Interactive Section --- */
 
@@ -304,3 +311,4 @@ footer { background-color: var(--secondary-color); color: var(--white); text-ali
     text-decoration: underline;
 
 }
+
