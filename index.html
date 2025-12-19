@@ -17,6 +17,14 @@
     <!-- Sticky Navigation -->
     <nav class="navbar">
         <a href="#home" class="nav-logo">Return to Nature</a>
+        
+        <!-- NEW: Hamburger Icon for Mobile -->
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="#services">Offerings</a></li>
             <li><a href="#about">About</a></li>
@@ -31,7 +39,6 @@
             <img src="bobinsana-flair.png" alt="Bobinsana flower logo" class="title-flair">
             <h1>Return to Your Natural<br>State of Peace</h1>
             <h2>Restorative Reiki & Classical Hatha Yoga with Turner Thomas</h2> 
-            <!-- Updated CTA: Scrolls to the "Connect" section where they choose their path -->
             <a href="#connect" class="cta-button primary-cta">Begin Your Journey</a>
         </div>
     </header>
@@ -91,8 +98,6 @@
             </div>
             
             <div style="margin-top: 50px; text-align: center;">
-                <!-- Updated Button: Links to External Calendar -->
-                <!-- PASTE YOUR CALENDAR LINK BELOW inside the href="" quotes -->
                 <a href="INSERT_CALENDAR_LINK_HERE" target="_blank" class="cta-button pink-cta">Book a Session</a>
             </div>            
         </section>
@@ -155,7 +160,7 @@
             </div>
         </section>
 
-        <!-- NEW: "Connect" Section with Split Options -->
+        <!-- Booking Section -->
         <section class="booking-section" id="connect">
             <h2>Begin Your Journey</h2>
             <p class="booking-intro">Choose the path that feels right for you today.</p>
@@ -166,8 +171,6 @@
                 <div class="direct-booking-box">
                     <h3>Ready to Heal?</h3>
                     <p>Skip the email tag. View my current availability and schedule your 90-minute session directly.</p>
-                    
-                    <!-- PASTE YOUR CALENDAR LINK BELOW inside the href="" quotes -->
                     <a href="INSERT_CALENDAR_LINK_HERE" target="_blank" class="cta-button">View Calendar & Book</a>
                 </div>
 
@@ -209,5 +212,24 @@
         <p>&copy; 2025 Return to Nature. Holistic Wellness.</p>
     </footer>
 
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

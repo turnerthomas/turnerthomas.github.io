@@ -14,6 +14,11 @@
 
 html { scroll-behavior: smooth; }
 
+/* CRITICAL FIX: Global Box Sizing for better responsive calculations */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: var(--font-body);
     margin: 0; padding: 0;
@@ -21,6 +26,7 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     padding-top: var(--nav-height);
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 h1, h2, h3 {
@@ -46,12 +52,26 @@ section {
     z-index: 1000;
     height: var(--nav-height);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%; box-sizing: border-box;
+    padding: 0 5%; 
 }
 .nav-logo { font-family: var(--font-heading); font-size: 1.6em; font-weight: 700; color: var(--primary-color); text-decoration: none; }
 .nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--secondary-color); font-weight: 500; font-size: 0.95em; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
 .nav-links a:hover { color: var(--bobinsana-pink); }
+
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--secondary-color);
+}
 
 /* --- Hero --- */
 .hero-section { background-color: var(--light-bg); padding: 80px 20px 80px; text-align: center; }
@@ -80,7 +100,6 @@ section {
 .pink-cta { background-color: var(--bobinsana-pink); }
 .pink-cta:hover { background-color: var(--secondary-color); }
 
-/* New Outline Button for "Consult" option */
 .outline-cta {
     background-color: transparent;
     color: var(--secondary-color);
@@ -90,6 +109,7 @@ section {
 
 /* --- Who I Help --- */
 .who-i-help { background-color: var(--white); padding: 20px 0; }
+.container-narrow { max-width: 700px; margin: 0 auto; padding: 0 15px; } /* Added missing class */
 .gate-header { cursor: pointer; list-style: none; outline: none; padding: 15px 0; user-select: none; }
 .gate-header::-webkit-details-marker { display: none; }
 .header-inline { display: flex; justify-content: center; align-items: center; gap: 15px; }
@@ -106,7 +126,18 @@ section {
 /* --- Services --- */
 .services { background-color: var(--light-bg); text-align: center; }
 .service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
-.card { flex: 1; min-width: 300px; max-width: 450px; background-color: var(--white); padding: 40px 30px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; }
+.card { 
+    flex: 1; 
+    min-width: 280px; /* Reduced from 300px to fit small screens */
+    max-width: 450px; 
+    background-color: var(--white); 
+    padding: 40px 30px; 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    border-top: 5px solid var(--primary-color); 
+    display: flex; flex-direction: column; justify-content: space-between; 
+}
 .card h3 { font-size: 1.6em; margin: 0 0 5px; color: var(--secondary-color); }
 .card h4 { font-style: italic; color: var(--light-brown); margin-bottom: 20px; font-weight: 400; font-family: var(--font-heading); font-size: 1.2em; }
 .card p { margin-bottom: 20px; }
@@ -140,7 +171,7 @@ section {
 .step h3 { font-size: 1.2em; margin-bottom: 10px; color: var(--secondary-color); }
 .step p { font-size: 0.9em; line-height: 1.5; }
 
-/* --- Booking & Contact (New Split Layout) --- */
+/* --- Booking & Contact --- */
 .booking-section { text-align: center; background-color: var(--white); }
 .booking-intro { max-width: 700px; margin: 0 auto 40px; font-size: 1.1em; }
 
@@ -149,7 +180,6 @@ section {
     display: flex; flex-direction: column; gap: 50px;
 }
 
-/* 1. Direct Calendar Booking Box */
 .direct-booking-box {
     background-color: var(--light-bg);
     border: 2px solid var(--primary-color);
@@ -159,7 +189,6 @@ section {
 }
 .direct-booking-box h3 { margin-top: 0; color: var(--primary-color); }
 
-/* 2. Visual Divider */
 .booking-divider {
     display: flex; align-items: center; justify-content: center; gap: 20px;
     font-family: var(--font-heading); font-size: 1.5em; color: var(--light-brown);
@@ -168,7 +197,6 @@ section {
     content: ""; display: block; width: 100px; height: 1px; background-color: #ddd;
 }
 
-/* 3. The Form (Secondary Option) */
 .consultation-form-wrapper {
     max-width: 650px; margin: 0 auto; width: 100%;
     background-color: var(--light-bg); padding: 40px; border-radius: 20px;
@@ -189,15 +217,54 @@ section {
 footer { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 40px 20px; }
 footer a { color: #fff; opacity: 0.8; }
 
-/* --- Mobile Fixes --- */
+/* --- MOBILE & RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
-    .navbar { padding: 0 20px; }
-    .nav-links { display: none; }
-    .hero-content h1 { font-size: 2.8em; }
-    .header-inline { gap: 10px; }
+    /* Menu Active State - Slide Down/Out */
+    .navbar { padding: 0 20px; justify-content: space-between; }
+    
+    .hamburger { display: block; z-index: 1001; }
+    
+    /* Turn hamburger to X when active */
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: var(--nav-height);
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        padding-top: 40px;
+        gap: 40px;
+    }
+
+    .nav-links.active { left: 0; }
+    
+    .nav-links a { font-size: 1.5em; display: block; }
+
+    /* Font Size Adjustments */
+    .hero-content h1 { font-size: 2.5em; } /* Smaller to fit screen */
     .section-title-green { font-size: 1.8em; }
+    
+    /* Spacing Fixes */
+    .header-inline { gap: 10px; }
+    
+    /* Form & Box Padding Fixes */
     .direct-booking-box { padding: 30px 20px; }
     .consultation-form-wrapper { padding: 30px 20px; }
+    
+    /* Divider Fix */
     .booking-divider::before, .booking-divider::after { width: 40px; }
+    
+    /* Steps Stack */
     .process-steps { flex-direction: column; align-items: center; gap: 30px; }
+    
+    /* Card Width Fix */
+    .card { width: 100%; min-width: auto; }
 }
