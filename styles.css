@@ -6,7 +6,7 @@
     --text-color: #4A3C38;       /* Dark Coffee */
     --light-bg: #FAF9F6;         /* Off-White */
     --white: #ffffff;
-    --bobinsana-pink: #D46A9B;   /* Vibrant Floral Rose */
+    --bobinsana-pink: #E15D8F;   /* Vibrant Floral Rose */
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Roboto', sans-serif;
     --nav-height: 70px;
@@ -54,7 +54,26 @@ section {
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 5%; 
 }
-.nav-logo { font-family: var(--font-heading); font-size: 1.6em; font-weight: 700; color: var(--primary-color); text-decoration: none; }
+
+/* Updated Logo Styling */
+.nav-logo { 
+    font-family: var(--font-heading); 
+    font-size: 1.6em; 
+    font-weight: 700; 
+    color: var(--primary-color); 
+    text-decoration: none;
+    display: flex;       /* Aligns icon and text */
+    align-items: center; /* Vertically centers them */
+    gap: 12px;           /* Space between icon and text */
+}
+
+/* New Icon Scaling */
+.nav-icon {
+    height: 45px; /* Scaled to fit within the 70px nav height */
+    width: auto;
+    object-fit: contain;
+}
+
 .nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--secondary-color); font-weight: 500; font-size: 0.95em; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
 .nav-links a:hover { color: var(--bobinsana-pink); }
@@ -109,7 +128,7 @@ section {
 
 /* --- Who I Help --- */
 .who-i-help { background-color: var(--white); padding: 20px 0; }
-.container-narrow { max-width: 700px; margin: 0 auto; padding: 0 15px; } /* Added missing class */
+.container-narrow { max-width: 700px; margin: 0 auto; padding: 0 15px; }
 .gate-header { cursor: pointer; list-style: none; outline: none; padding: 15px 0; user-select: none; }
 .gate-header::-webkit-details-marker { display: none; }
 .header-inline { display: flex; justify-content: center; align-items: center; gap: 15px; }
@@ -128,7 +147,7 @@ section {
 .service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
 .card { 
     flex: 1; 
-    min-width: 280px; /* Reduced from 300px to fit small screens */
+    min-width: 280px; 
     max-width: 450px; 
     background-color: var(--white); 
     padding: 40px 30px; 
