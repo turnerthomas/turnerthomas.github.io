@@ -14,7 +14,7 @@
 
 html { scroll-behavior: smooth; }
 
-/* CRITICAL FIX: Global Box Sizing for better responsive calculations */
+/* CRITICAL FIX: Global Box Sizing */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -26,7 +26,7 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     padding-top: var(--nav-height);
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -55,21 +55,19 @@ section {
     padding: 0 5%; 
 }
 
-/* Updated Logo Styling */
 .nav-logo { 
     font-family: var(--font-heading); 
     font-size: 1.6em; 
     font-weight: 700; 
     color: var(--primary-color); 
     text-decoration: none;
-    display: flex;       /* Aligns icon and text */
-    align-items: center; /* Vertically centers them */
-    gap: 12px;           /* Space between icon and text */
+    display: flex;       
+    align-items: center; 
+    gap: 12px;           
 }
 
-/* New Icon Scaling */
 .nav-icon {
-    height: 45px; /* Scaled to fit within the 70px nav height */
+    height: 45px; 
     width: auto;
     object-fit: contain;
 }
@@ -126,21 +124,130 @@ section {
 }
 .outline-cta:hover { background-color: var(--secondary-color); color: var(--white); transform: translateY(-3px); }
 
-/* --- Who I Help --- */
-.who-i-help { background-color: var(--white); padding: 20px 0; }
-.container-narrow { max-width: 700px; margin: 0 auto; padding: 0 15px; }
-.gate-header { cursor: pointer; list-style: none; outline: none; padding: 15px 0; user-select: none; }
+/* --- Who I Help (Interactive Gate - UPDATED) --- */
+.who-i-help { 
+    background-color: var(--white); 
+    padding: 60px 0; 
+}
+
+.container-narrow { 
+    max-width: 750px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* The "Card" Container */
+.interactive-gate {
+    background-color: #F4F8F4; /* Very pale sage/mint */
+    border: 1px solid rgba(143, 188, 143, 0.2); 
+    border-radius: 16px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-gate:not([open]):hover {
+    background-color: #EBF5EB; 
+    transform: translateY(-2px);
+}
+
+.interactive-gate[open] {
+    background-color: var(--white); 
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(143, 188, 143, 0.2); 
+    padding-bottom: 30px;
+}
+
+.gate-header { 
+    list-style: none; 
+    outline: none; 
+    padding: 20px; 
+    user-select: none;
+    width: 100%;
+}
+
 .gate-header::-webkit-details-marker { display: none; }
-.header-inline { display: flex; justify-content: center; align-items: center; gap: 15px; }
-.section-title-green { color: var(--primary-color) !important; margin: 0 !important; font-size: 2.1em; }
-.sleek-plus-circle { font-size: 20px; color: var(--light-brown); width: 34px; height: 34px; border: 1px solid rgba(176, 141, 87, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.4s ease; flex-shrink: 0; }
-.interactive-gate[open] .sleek-plus-circle { transform: rotate(45deg); background-color: var(--bobinsana-pink); color: white; border-color: var(--bobinsana-pink); }
-.revealed-content { animation: reveal 0.5s ease-out; padding-top: 30px; }
-@keyframes reveal { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-.resonance-point { margin-bottom: 35px; text-align: center; }
-.resonance-point h3 { font-size: 1.8em; color: var(--bobinsana-pink); margin-bottom: 5px; }
-.resonance-point p { font-size: 1em; color: var(--light-brown); font-style: italic; margin: 0; max-width: 600px; margin: 0 auto;}
-.emphasized-you { font-weight: 700; text-decoration: underline; text-decoration-color: var(--primary-color); }
+
+.header-inline { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+}
+
+.section-title-green { 
+    color: var(--primary-color) !important; 
+    margin: 0 !important; 
+    font-size: 1.8em; 
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+/* The Plus Button Styling */
+.sleek-plus-circle { 
+    font-size: 22px; 
+    color: var(--primary-color); 
+    width: 40px; 
+    height: 40px; 
+    background-color: var(--white);
+    border: 1px solid rgba(143, 188, 143, 0.4); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0; 
+}
+
+.interactive-gate[open] .sleek-plus-circle { 
+    transform: rotate(135deg); 
+    background-color: var(--bobinsana-pink); 
+    color: white; 
+    border-color: var(--bobinsana-pink); 
+}
+
+/* UPDATED: Reduced spacing here */
+.revealed-content { 
+    animation: reveal 0.6s ease-out; 
+    padding: 0 30px; 
+    border-top: 1px solid rgba(0,0,0,0.05); 
+    margin-top: 10px;
+    padding-top: 15px; /* Reduced from 30px */
+}
+
+@keyframes reveal { 
+    from { opacity: 0; transform: translateY(-10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.resonance-point { text-align: center; }
+
+/* UPDATED: Removed top margin here */
+.resonance-point h3 { 
+    font-size: 2em; 
+    color: var(--bobinsana-pink); 
+    margin-top: 0; /* Added to reduce gap */
+    margin-bottom: 15px; 
+    font-family: var(--font-heading);
+}
+
+.resonance-point p { 
+    font-size: 1.1em; 
+    color: var(--text-color); 
+    line-height: 1.8;
+    margin: 0 auto; 
+    max-width: 600px;
+}
+
+.emphasized-you { 
+    color: var(--bobinsana-pink); 
+    font-style: italic;
+    font-weight: 400; 
+    text-decoration: underline; 
+    text-decoration-color: var(--primary-color); 
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
 
 /* --- Services --- */
 .services { background-color: var(--light-bg); text-align: center; }
@@ -243,7 +350,6 @@ footer a { color: #fff; opacity: 0.8; }
     
     .hamburger { display: block; z-index: 1001; }
     
-    /* Turn hamburger to X when active */
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -268,8 +374,8 @@ footer a { color: #fff; opacity: 0.8; }
     .nav-links a { font-size: 1.5em; display: block; }
 
     /* Font Size Adjustments */
-    .hero-content h1 { font-size: 2.5em; } /* Smaller to fit screen */
-    .section-title-green { font-size: 1.8em; }
+    .hero-content h1 { font-size: 2.5em; } 
+    .section-title-green { font-size: 1.5em; }
     
     /* Spacing Fixes */
     .header-inline { gap: 10px; }
@@ -286,4 +392,8 @@ footer a { color: #fff; opacity: 0.8; }
     
     /* Card Width Fix */
     .card { width: 100%; min-width: auto; }
+
+    /* Fix interactive gate on mobile */
+    .interactive-gate { padding: 15px; }
+    .revealed-content { padding: 0 10px; padding-top: 15px; }
 }
