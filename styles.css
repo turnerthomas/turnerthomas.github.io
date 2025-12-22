@@ -274,10 +274,45 @@ section {
 /* --- Testimonials --- */
 .testimonials { background-color: var(--white); text-align: center; }
 .testimonial-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
-.testimonial-item { max-width: 500px; font-style: italic; color: var(--text-color); position: relative; padding: 20px; }
-.testimonial-item::before { content: "“"; font-family: var(--font-heading); font-size: 4em; color: rgba(176, 141, 87, 0.2); position: absolute; top: -20px; left: 50%; transform: translateX(-50%); }
-.client-name { display: block; margin-top: 15px; font-weight: 700; color: var(--light-brown); font-style: normal; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
 
+.testimonial-item { 
+    max-width: 500px; 
+    color: var(--text-color); 
+    position: relative; 
+    padding: 20px; 
+}
+
+/* This targets the actual text inside the testimonial */
+.testimonial-item p {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.2em; /* Pinyon needs to be larger to be legible */
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-style: normal; /* Removes the standard italic so the script looks clean */
+}
+
+.testimonial-item::before { 
+    content: "“"; 
+    font-family: var(--font-heading); 
+    font-size: 4em; 
+    color: rgba(176, 141, 87, 0.2); 
+    position: absolute; 
+    top: -20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.client-name { 
+    display: block; 
+    margin-top: 15px; 
+    font-weight: 700; 
+    color: var(--light-brown); 
+    font-family: var(--font-body); /* Keeps the name clean and readable */
+    font-style: normal; 
+    font-size: 0.9em; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
 /* --- About --- */
 .about-me { background-color: var(--primary-color); color: var(--light-bg); text-align: center; }
 .about-me h2 { color: var(--white); }
@@ -396,4 +431,5 @@ footer a { color: #fff; opacity: 0.8; }
     /* Fix interactive gate on mobile */
     .interactive-gate { padding: 15px; }
     .revealed-content { padding: 0 10px; padding-top: 15px; }
+
 }
