@@ -239,14 +239,17 @@ section {
     max-width: 600px;
 }
 
-.emphasized-you { 
-    color: var(--bobinsana-pink); 
-    font-style: italic;
-    font-weight: 400; 
-    text-decoration: underline; 
-    text-decoration-color: var(--primary-color); 
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+/* Targets the "I support you" header */
+.resonance-point h3 {
+    font-weight: 300; /* Makes "I support" light/less bold */
+    color: var(--bobinsana-pink); /* Keeps the pink color you had before */
+}
+
+/* Targets the underlined "you" */
+.resonance-point h3 u {
+    font-weight: 700; /* Makes "you" bold */
+    text-decoration: underline; /* Keeps the underline */
+    text-underline-offset: 4px; /* Gives the underline some breathing room */
 }
 
 /* --- Services --- */
@@ -271,7 +274,7 @@ section {
 .perfect-for strong { color: var(--bobinsana-pink); display: block; margin-bottom: 5px; font-family: var(--font-heading); font-size: 1.1em; }
 .perfect-for span { font-size: 0.9em; line-height: 1.5; display: block;}
 
-/* --- Testimonials --- */
+/* --- Testimonials Updated --- */
 .testimonials { background-color: var(--white); text-align: center; }
 .testimonial-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
 
@@ -282,23 +285,29 @@ section {
     padding: 20px; 
 }
 
+/* 1. This is the DEFAULT style (Alyssa's quote) using Caveat */
 .testimonial-item p {
     font-family: 'Caveat', cursive;
-    font-size: 1.8em; /* Adjusted for Caveat's natural scale */
+    font-size: 1.8em;
     line-height: 1.4;
-    color: var(--text-color);
     margin-bottom: 10px;
-    font-style: normal; /* Ensures it uses the font's natural shape */
+    font-style: normal;
 }
 
-/* Ensure the quote marks still look good above the handwriting */
+/* 2. This is the SPECIFIC style for Hefker's quote using Patrick Hand */
+.testimonial-item p.patrick-font {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.8em; 
+    line-height: 1.4;
+}
+
 .testimonial-item::before { 
     content: "“"; 
     font-family: var(--font-heading); 
     font-size: 4em; 
     color: rgba(176, 141, 87, 0.2); 
     position: absolute; 
-    top: -25px; 
+    top: -20px; 
     left: 50%; 
     transform: translateX(-50%); 
 }
@@ -308,7 +317,7 @@ section {
     margin-top: 15px; 
     font-weight: 700; 
     color: var(--light-brown); 
-    font-family: var(--font-body); /* Keeps the name clean and readable */
+    font-family: var(--font-body); 
     font-style: normal; 
     font-size: 0.9em; 
     text-transform: uppercase; 
@@ -434,4 +443,5 @@ footer a { color: #fff; opacity: 0.8; }
     .revealed-content { padding: 0 10px; padding-top: 15px; }
 
 }
+
 
