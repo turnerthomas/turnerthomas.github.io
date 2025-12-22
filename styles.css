@@ -282,22 +282,23 @@ section {
     padding: 20px; 
 }
 
-/* This targets the actual text inside the testimonial */
 .testimonial-item p {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.2em; /* Pinyon needs to be larger to be legible */
-    line-height: 1.2;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8em; /* Adjusted for Caveat's natural scale */
+    line-height: 1.4;
+    color: var(--text-color);
     margin-bottom: 10px;
-    font-style: normal; /* Removes the standard italic so the script looks clean */
+    font-style: normal; /* Ensures it uses the font's natural shape */
 }
 
+/* Ensure the quote marks still look good above the handwriting */
 .testimonial-item::before { 
     content: "“"; 
     font-family: var(--font-heading); 
     font-size: 4em; 
     color: rgba(176, 141, 87, 0.2); 
     position: absolute; 
-    top: -20px; 
+    top: -25px; 
     left: 50%; 
     transform: translateX(-50%); 
 }
@@ -433,3 +434,4 @@ footer a { color: #fff; opacity: 0.8; }
     .revealed-content { padding: 0 10px; padding-top: 15px; }
 
 }
+
