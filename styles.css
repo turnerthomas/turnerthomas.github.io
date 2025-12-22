@@ -242,14 +242,19 @@ section {
 /* Targets the "I support you" header */
 .resonance-point h3 {
     font-weight: 300; /* Makes "I support" light/less bold */
-    color: var(--bobinsana-pink); /* Keeps the pink color you had before */
+    color: var(--bobinsana-pink); /* Keeps the pink color for the text */
 }
 
 /* Targets the underlined "you" */
 .resonance-point h3 u {
     font-weight: 700; /* Makes "you" bold */
     text-decoration: underline; /* Keeps the underline */
-    text-underline-offset: 4px; /* Gives the underline some breathing room */
+    
+    /* NEW: This ensures the underline stays Sage Green */
+    text-decoration-color: var(--primary-color); 
+    
+    text-underline-offset: 4px; /* Keeps the breathing room below the text */
+    text-decoration-thickness: 2px; /* Optional: makes the green line a bit more visible */
 }
 
 /* --- Services --- */
@@ -443,5 +448,6 @@ footer a { color: #fff; opacity: 0.8; }
     .revealed-content { padding: 0 10px; padding-top: 15px; }
 
 }
+
 
 
