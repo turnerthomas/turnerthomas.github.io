@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Holistic Wellness, Reiki, and Classical Hatha Yoga with Turner Thomas.">
     <title>Return to Nature | Holistic Wellness</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Styles & Fonts -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Patrick+Hand&family=Caveat:wght@400..700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
 </head>
@@ -37,8 +41,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section fade-in-section" id="home">
-        <div class="hero-content">
+    <header class="hero-section" id="home">
+        <div class="hero-content scroll-trigger">
             <img src="bobinsana-flair.png" alt="Bobinsana flower logo" class="title-flair">
             <h1>Return to Nature</h1>
             <h2>Holistic Wellness with Turner Thomas</h2> 
@@ -46,16 +50,16 @@
         </div>
     </header>
 
-    <!-- SUGGESTION 1: Organic Wave Divider (Light BG to White) -->
-    <div class="wave-container-bottom">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0 0L48 8.875C96 17.75 192 35.5 288 44.375C384 53.25 480 53.25 576 44.375C672 35.5 768 17.75 864 17.75C960 17.75 1056 35.5 1152 44.375C1248 53.25 1344 53.25 1392 53.25H1440V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V0Z" fill="#ffffff"/>
+    <!-- Wave Divider: Light BG to White -->
+    <div class="wave-divider fill-white">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
         </svg>
     </div>
 
     <main>
         <!-- Interactive Gate -->
-        <section class="who-i-help fade-in-section">
+        <section class="who-i-help scroll-trigger">
             <div class="container-narrow">
                 <details class="interactive-gate">
                     <summary class="gate-header">
@@ -78,11 +82,10 @@
         </section>
 
         <!-- Services Section -->
-        <section class="services fade-in-section" id="services">
+        <section class="services scroll-trigger" id="services">
             <h2>Offerings</h2>
             
             <div class="service-cards">
-                <!-- SUGGESTION 3: Hover Lift & Soft Borders are handled in CSS -->
                 <div class="card">
                     <div>
                         <h3>Reiki (Remote)</h3>
@@ -114,7 +117,7 @@
         </section>
 
         <!-- Testimonials -->
-        <section class="testimonials fade-in-section">
+        <section class="testimonials scroll-trigger">
             <h2>Kind Words</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-item">
@@ -129,18 +132,18 @@
             </div>
         </section>
 
-        <!-- SUGGESTION 1: Organic Wave Divider (White to Sage Green) -->
-        <div class="wave-container-top-green">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M0 60L60 55C120 50 240 40 360 45C480 50 600 70 720 75C840 80 960 70 1080 60C1200 50 1320 40 1380 35L1440 30V121H1380C1320 121 1200 121 1080 121C960 121 840 121 720 121C600 121 480 121 360 121C240 121 120 121 60 121H0V60Z" fill="#8FBC8F"/>
+        <!-- Wave Divider: White to Sage Green -->
+        <div class="wave-divider fill-green">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
             </svg>
         </div>
 
         <!-- About Section -->
-        <section class="about-me fade-in-section" id="about">
+        <section class="about-me scroll-trigger" id="about">
             <h2>About Turner</h2>
             <div class="about-content-wrapper">
-                <!-- SUGGESTION 7: Drop Cap implementation -->
+                <!-- Drop Cap added here -->
                 <p class="about-paragraph"><span class="drop-cap">H</span><strong>ello! I'm Turner.</strong> My journey into holistic healing began, as many do, with my own path of transformation. I fell in love with exploring my inner landscape through a disciplined practice of Yoga, Reiki, Meditation, Pranayama, and Shipibo Plant Dietas. These disciplines became my greatest allies while navigating personal obstacles with anxieties, addictions, depression, and disconnection.</p>
 	
 				<p class="about-paragraph">My work is inspired by a lifelong immersion in these practices—from the stillness of Zazen at the Upaya Zen Center; the discipline of Sivananda Hatha Yoga at Yogi Hari's Ashram; to the profound mystical healing traditions of the indigenous Shipibo of Peru. I have lived within these cultures to bring you embodied teachings. Since discovering Reiki in 2020, I have deepened my practice under the guidance and inspiration of my mentor, Valerie Brodar.</p>
@@ -161,21 +164,23 @@
             </div>
         </section>
 
-        <!-- SUGGESTION 1: Organic Wave Divider (Sage Green to Light BG) -->
-        <div class="wave-container-bottom-green">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M0 0H1440V60C1380 50 1260 30 1140 30C1020 30 900 50 780 60C660 70 540 70 420 60C300 50 180 30 120 20L60 10V0H0Z" fill="#8FBC8F"/>
+        <!-- Wave Divider: Sage Green to Light BG -->
+        <div class="wave-divider fill-light">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
             </svg>
         </div>
 
         <!-- Process Section -->
-        <section class="process-section fade-in-section" id="process">
+        <section class="process-section scroll-trigger" id="process">
             <h2>What to Expect</h2>
             
-            <!-- SUGGESTION 4: The Process Line Container -->
             <div class="process-steps">
-                <div class="process-line-connector"></div> <!-- The Line CSS -->
-                
+                <!-- The Dashed Connector Line -->
+                <div class="process-connector"></div>
+
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Connect</h3>
@@ -195,7 +200,7 @@
         </section>
 
         <!-- Booking Section -->
-        <section class="booking-section fade-in-section" id="connect">
+        <section class="booking-section scroll-trigger" id="connect">
             <h2>Begin Your Journey</h2>
             <p class="booking-intro">Choose the path that feels right for you today.</p>
 
@@ -246,8 +251,9 @@
         <p>&copy; 2025 Return to Nature. Holistic Wellness.</p>
     </footer>
 
-    <!-- MOBILE MENU SCRIPT -->
+    <!-- Scripts -->
     <script>
+        // Mobile Menu
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         const navItems = document.querySelectorAll('.nav-links li a');
@@ -257,8 +263,29 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 hamburger.classList.remove('active');
-                navLinks.cla
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Safe Scroll Animation Script
+        // This adds a class only when elements come into view, 
+        // but elements are VISIBLE by default in CSS.
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-trigger').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
