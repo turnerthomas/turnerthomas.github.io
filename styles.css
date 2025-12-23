@@ -1,0 +1,529 @@
+/* --- 1. General Styling --- */
+:root {
+    --primary-color: #8FBC8F;    /* Sage Green */
+    --secondary-color: #A0522D;  /* Sienna */
+    --light-brown: #B08D57;      /* Antique Gold/Brown */
+    --text-color: #4A3C38;       /* Dark Coffee */
+    --light-bg: #FAF9F6;         /* Off-White */
+    --white: #ffffff;
+    --bobinsana-pink: #E15D8F;   /* Vibrant Floral Rose */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Roboto', sans-serif;
+    --nav-height: 70px;
+}
+
+html { scroll-behavior: smooth; }
+
+/* CRITICAL FIX: Global Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0; padding: 0;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--white);
+    padding-top: var(--nav-height);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+h2 { font-size: 2.5em; margin-bottom: 20px; }
+
+section { 
+    padding: 60px 20px; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    scroll-margin-top: var(--nav-height); 
+}
+
+/* --- Navigation --- */
+.navbar {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; 
+}
+
+.nav-logo { 
+    font-family: var(--font-heading); 
+    font-size: 1.6em; 
+    font-weight: 700; 
+    color: var(--primary-color); 
+    text-decoration: none;
+    display: flex;       
+    align-items: center; 
+    gap: 12px;           
+}
+
+.nav-icon {
+    height: 45px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--secondary-color); font-weight: 500; font-size: 0.95em; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+.nav-links a:hover { color: var(--bobinsana-pink); }
+
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--secondary-color);
+}
+
+/* --- Hero --- */
+.hero-section { background-color: var(--light-bg); padding: 80px 20px 80px; text-align: center; }
+.title-flair { display: block; margin: 0 auto 20px; max-width: 100px; height: auto; }
+.hero-content h1 { font-size: 3.8em; color: var(--primary-color); margin-bottom: 15px; font-weight: 400; line-height: 1.1; }
+.hero-content h2 { font-family: var(--font-body); font-size: 1.2em; color: var(--light-brown); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 35px; font-weight: 400; }
+
+/* --- Buttons --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 18px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+.cta-button:hover { background-color: var(--secondary-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(160, 82, 45, 0.2); }
+
+.pink-cta { background-color: var(--bobinsana-pink); }
+.pink-cta:hover { background-color: var(--secondary-color); }
+
+.outline-cta {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+.outline-cta:hover { background-color: var(--secondary-color); color: var(--white); transform: translateY(-3px); }
+
+/* --- Who I Help (Interactive Gate - UPDATED) --- */
+.who-i-help { 
+    background-color: var(--white); 
+    padding: 60px 0; 
+}
+
+.container-narrow { 
+    max-width: 750px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* The "Card" Container */
+.interactive-gate {
+    background-color: #F4F8F4; /* Very pale sage/mint */
+    border: 1px solid rgba(143, 188, 143, 0.2); 
+    border-radius: 16px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-gate:not([open]):hover {
+    background-color: #EBF5EB; 
+    transform: translateY(-2px);
+}
+
+.interactive-gate[open] {
+    background-color: var(--white); 
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(143, 188, 143, 0.2); 
+    padding-bottom: 30px;
+}
+
+.gate-header { 
+    list-style: none; 
+    outline: none; 
+    padding: 20px; 
+    user-select: none;
+    width: 100%;
+}
+
+.gate-header::-webkit-details-marker { display: none; }
+
+.header-inline { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+}
+
+.section-title-green { 
+    color: var(--primary-color) !important; 
+    margin: 0 !important; 
+    font-size: 1.8em; 
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+/* The Plus Button Styling */
+.sleek-plus-circle { 
+    font-size: 22px; 
+    color: var(--primary-color); 
+    width: 40px; 
+    height: 40px; 
+    background-color: var(--white);
+    border: 1px solid rgba(143, 188, 143, 0.4); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0; 
+}
+
+.interactive-gate[open] .sleek-plus-circle { 
+    transform: rotate(135deg); 
+    background-color: var(--bobinsana-pink); 
+    color: white; 
+    border-color: var(--bobinsana-pink); 
+}
+
+/* UPDATED: Reduced spacing here */
+.revealed-content { 
+    animation: reveal 0.6s ease-out; 
+    padding: 0 30px; 
+    border-top: 1px solid rgba(0,0,0,0.05); 
+    margin-top: 10px;
+    padding-top: 15px; /* Reduced from 30px */
+}
+
+@keyframes reveal { 
+    from { opacity: 0; transform: translateY(-10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.resonance-point { text-align: center; }
+
+/* UPDATED: Removed top margin here */
+.resonance-point h3 { 
+    font-size: 2em; 
+    color: var(--bobinsana-pink); 
+    margin-top: 0; /* Added to reduce gap */
+    margin-bottom: 15px; 
+    font-family: var(--font-heading);
+}
+
+.resonance-point p { 
+    font-size: 1.1em; 
+    color: var(--text-color); 
+    line-height: 1.8;
+    margin: 0 auto; 
+    max-width: 600px;
+}
+
+/* Targets the "I support you" header */
+.resonance-point h3 {
+    font-weight: 300; /* Makes "I support" light/less bold */
+    color: var(--bobinsana-pink); /* Keeps the pink color for the text */
+}
+
+/* Targets the underlined "you" */
+.resonance-point h3 u {
+    font-weight: 700; /* Makes "you" bold */
+    text-decoration: underline; /* Keeps the underline */
+    
+    /* NEW: This ensures the underline stays Sage Green */
+    text-decoration-color: var(--primary-color); 
+    
+    text-underline-offset: 4px; /* Keeps the breathing room below the text */
+    text-decoration-thickness: 2px; /* Optional: makes the green line a bit more visible */
+}
+
+/* --- Services --- */
+.services { background-color: var(--light-bg); text-align: center; }
+.service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+.card { 
+    flex: 1; 
+    min-width: 280px; 
+    max-width: 450px; 
+    background-color: var(--white); 
+    padding: 40px 30px; 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    border-top: 5px solid var(--primary-color); 
+    display: flex; flex-direction: column; justify-content: space-between; 
+}
+.card h3 { font-size: 1.6em; margin: 0 0 5px; color: var(--secondary-color); }
+.card h4 { font-style: italic; color: var(--light-brown); margin-bottom: 20px; font-weight: 400; font-family: var(--font-heading); font-size: 1.2em; }
+.card p { margin-bottom: 20px; }
+.perfect-for { text-align: left; background-color: var(--light-bg); padding: 15px 20px; border-radius: 8px; margin-top: auto; }
+.perfect-for strong { color: var(--bobinsana-pink); display: block; margin-bottom: 5px; font-family: var(--font-heading); font-size: 1.1em; }
+.perfect-for span { font-size: 0.9em; line-height: 1.5; display: block;}
+
+/* --- Testimonials Updated --- */
+.testimonials { background-color: var(--white); text-align: center; }
+.testimonial-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+
+.testimonial-item { 
+    max-width: 500px; 
+    color: var(--text-color); 
+    position: relative; 
+    padding: 20px; 
+}
+
+/* 1. This is the DEFAULT style (Alyssa's quote) using Caveat */
+.testimonial-item p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-style: normal;
+}
+
+/* 2. This is the SPECIFIC style for Hefker's quote using Patrick Hand */
+.testimonial-item p.patrick-font {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.8em; 
+    line-height: 1.4;
+}
+
+.testimonial-item::before { 
+    content: "“"; 
+    font-family: var(--font-heading); 
+    font-size: 4em; 
+    color: rgba(176, 141, 87, 0.2); 
+    position: absolute; 
+    top: -20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.client-name { 
+    display: block; 
+    margin-top: 15px; 
+    font-weight: 700; 
+    color: var(--light-brown); 
+    font-family: var(--font-body); 
+    font-style: normal; 
+    font-size: 0.9em; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+/* --- About --- */
+.about-me { background-color: var(--primary-color); color: var(--light-bg); text-align: center; }
+.about-me h2 { color: var(--white); }
+.about-content-wrapper { max-width: 850px; margin: 0 auto 40px; }
+.about-paragraph { font-size: 1.1em; color: var(--white); margin-bottom: 25px; text-align: left; }
+.about-paragraph strong { font-weight: 700; color: #E8F5E9; }
+.credentials-list { list-style: none; padding: 0; text-align: left; margin: 30px 0; border-left: 2px solid rgba(255,255,255,0.3); padding-left: 20px; }
+.credentials-list li { margin-bottom: 10px; font-family: var(--font-heading); font-size: 1.2em; color: var(--white); }
+.about-photos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+.about-photos img { width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); object-fit: cover; }
+
+/* --- Process --- */
+.process-section { background-color: var(--light-bg); text-align: center; padding-bottom: 20px;}
+.process-steps { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+.step { max-width: 250px; position: relative; }
+.step-number { width: 50px; height: 50px; background-color: var(--bobinsana-pink); color: white; border-radius: 50%; font-family: var(--font-heading); font-size: 1.5em; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+.step h3 { font-size: 1.2em; margin-bottom: 10px; color: var(--secondary-color); }
+.step p { font-size: 0.9em; line-height: 1.5; }
+
+/* --- Booking & Contact --- */
+.booking-section { text-align: center; background-color: var(--white); }
+.booking-intro { max-width: 700px; margin: 0 auto 40px; font-size: 1.1em; }
+
+.booking-container {
+    max-width: 900px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 50px;
+}
+
+.direct-booking-box {
+    background-color: var(--light-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+}
+.direct-booking-box h3 { margin-top: 0; color: var(--primary-color); }
+
+.booking-divider {
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    font-family: var(--font-heading); font-size: 1.5em; color: var(--light-brown);
+}
+.booking-divider::before, .booking-divider::after {
+    content: ""; display: block; width: 100px; height: 1px; background-color: #ddd;
+}
+
+.consultation-form-wrapper {
+    max-width: 650px; margin: 0 auto; width: 100%;
+    background-color: var(--light-bg); padding: 40px; border-radius: 20px;
+    text-align: left;
+}
+
+.form-group { margin-bottom: 25px; }
+.form-group label { display: block; margin-bottom: 8px; font-family: var(--font-heading); font-size: 1.3em; color: var(--secondary-color); }
+.form-group input, .form-group textarea { 
+    width: 100%; padding: 15px; 
+    border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; 
+    font-family: var(--font-body); font-size: 1rem; outline: none; transition: 0.3s;
+}
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--bobinsana-pink); box-shadow: 0 0 8px rgba(212, 106, 155, 0.15);
+}
+
+footer { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 40px 20px; }
+footer a { color: #fff; opacity: 0.8; }
+
+/* --- MOBILE & RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    /* Menu Active State - Slide Down/Out */
+    .navbar { padding: 0 20px; justify-content: space-between; }
+    
+    .hamburger { display: block; z-index: 1001; }
+    
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: var(--nav-height);
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        padding-top: 40px;
+        gap: 40px;
+    }
+
+    .nav-links.active { left: 0; }
+    
+    .nav-links a { font-size: 1.5em; display: block; }
+
+    /* Font Size Adjustments */
+    .hero-content h1 { font-size: 2.5em; } 
+    .section-title-green { font-size: 1.5em; }
+    
+    /* Spacing Fixes */
+    .header-inline { gap: 10px; }
+    
+    /* Form & Box Padding Fixes */
+    .direct-booking-box { padding: 30px 20px; }
+    .consultation-form-wrapper { padding: 30px 20px; }
+    
+    /* Divider Fix */
+    .booking-divider::before, .booking-divider::after { width: 40px; }
+    
+    /* Steps Stack */
+    .process-steps { flex-direction: column; align-items: center; gap: 30px; }
+    
+    /* Card Width Fix */
+    .card { width: 100%; min-width: auto; }
+
+    /* Fix interactive gate on mobile */
+    .interactive-gate { padding: 15px; }
+    .revealed-content { padding: 0 10px; padding-top: 15px; }
+
+}
+
+/* --- New Personal Creed Section (Minimalist) --- */
+.personal-creed {
+    background-color: var(--light-bg);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Flower Icon */
+.personal-creed::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    /* Ensure this file name matches your image exactly */
+    background-image: url('bobinsana-flair.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.04; 
+    z-index: 1;
+}
+
+.personal-creed .container-narrow {
+    position: relative;
+    z-index: 2;
+    max-width: 750px; 
+    margin: 0 auto; 
+}
+
+.creed-quote {
+    border: none;
+    margin: 20px auto 0; /* Reduced top margin since there is no Header */
+    text-align: center;
+    padding: 30px;
+    /* Sage Green Borders top/bottom */
+    border-top: 2px solid rgba(143, 188, 143, 0.4); 
+    border-bottom: 2px solid rgba(143, 188, 143, 0.4); 
+}
+
+.creed-main-message {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5em; /* Slightly larger since it's the only title now */
+    color: var(--bobinsana-pink);
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+/* STYLING THE GREEN UNDERLINE */
+.creed-main-message u {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color); /* Uses your Sage Green */
+    text-decoration-thickness: 3px; /* Makes the line a bit thicker */
+    text-underline-offset: 8px; /* Pushes the line down a bit so it breathes */
+}
+
+.creed-body-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .creed-main-message {
+        font-size: 2.5em;
+    }
+    .creed-quote {
+        padding: 20px 10px;
+    }
+    .personal-creed::before {
+        width: 300px;
+        height: 300px;
+    }
+}
