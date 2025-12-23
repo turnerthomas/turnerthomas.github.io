@@ -22,7 +22,8 @@ html { scroll-behavior: smooth; }
 body {
     font-family: var(--font-body);
     margin: 0; padding: 0;
-    line-height: 1.7;
+    /* SUGGESTION 7: Increased line height for magazine feel */
+    line-height: 1.85; 
     color: var(--text-color);
     background-color: var(--white);
     padding-top: var(--nav-height);
@@ -42,6 +43,58 @@ section {
     max-width: 1100px; 
     margin: 0 auto; 
     scroll-margin-top: var(--nav-height); 
+}
+
+/* --- SUGGESTION 6: Animation Classes --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- SUGGESTION 1: Wave Dividers --- */
+.wave-container-bottom, .wave-container-top-green, .wave-container-bottom-green {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* Bottom of Hero (Light to White) */
+.wave-container-bottom {
+    background-color: var(--light-bg); 
+}
+.wave-container-bottom svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+/* Top of About (White to Sage Green) */
+.wave-container-top-green {
+    background-color: var(--white); 
+    margin-bottom: -1px; /* Remove faint gap lines */
+}
+.wave-container-top-green svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+}
+
+/* Bottom of About (Sage Green to Light BG) */
+.wave-container-bottom-green {
+    background-color: var(--light-bg);
+}
+.wave-container-bottom-green svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+    background-color: transparent;
 }
 
 /* --- Navigation --- */
@@ -91,7 +144,7 @@ section {
 }
 
 /* --- Hero --- */
-.hero-section { background-color: var(--light-bg); padding: 80px 20px 80px; text-align: center; }
+.hero-section { background-color: var(--light-bg); padding: 80px 20px 40px; text-align: center; }
 .title-flair { display: block; margin: 0 auto 20px; max-width: 100px; height: auto; }
 .hero-content h1 { font-size: 3.8em; color: var(--primary-color); margin-bottom: 15px; font-weight: 400; line-height: 1.1; }
 .hero-content h2 { font-family: var(--font-body); font-size: 1.2em; color: var(--light-brown); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 35px; font-weight: 400; }
@@ -124,7 +177,7 @@ section {
 }
 .outline-cta:hover { background-color: var(--secondary-color); color: var(--white); transform: translateY(-3px); }
 
-/* --- Who I Help (Interactive Gate - UPDATED) --- */
+/* --- Who I Help (Interactive Gate) --- */
 .who-i-help { 
     background-color: var(--white); 
     padding: 60px 0; 
@@ -136,9 +189,8 @@ section {
     padding: 0 20px; 
 }
 
-/* The "Card" Container */
 .interactive-gate {
-    background-color: #F4F8F4; /* Very pale sage/mint */
+    background-color: #F4F8F4; 
     border: 1px solid rgba(143, 188, 143, 0.2); 
     border-radius: 16px;
     padding: 10px;
@@ -183,7 +235,6 @@ section {
     letter-spacing: 0.5px;
 }
 
-/* The Plus Button Styling */
 .sleek-plus-circle { 
     font-size: 22px; 
     color: var(--primary-color); 
@@ -206,13 +257,12 @@ section {
     border-color: var(--bobinsana-pink); 
 }
 
-/* UPDATED: Reduced spacing here */
 .revealed-content { 
     animation: reveal 0.6s ease-out; 
     padding: 0 30px; 
     border-top: 1px solid rgba(0,0,0,0.05); 
     margin-top: 10px;
-    padding-top: 15px; /* Reduced from 30px */
+    padding-top: 15px; 
 }
 
 @keyframes reveal { 
@@ -222,11 +272,10 @@ section {
 
 .resonance-point { text-align: center; }
 
-/* UPDATED: Removed top margin here */
 .resonance-point h3 { 
     font-size: 2em; 
     color: var(--bobinsana-pink); 
-    margin-top: 0; /* Added to reduce gap */
+    margin-top: 0; 
     margin-bottom: 15px; 
     font-family: var(--font-heading);
 }
@@ -239,27 +288,23 @@ section {
     max-width: 600px;
 }
 
-/* Targets the "I support you" header */
 .resonance-point h3 {
-    font-weight: 300; /* Makes "I support" light/less bold */
-    color: var(--bobinsana-pink); /* Keeps the pink color for the text */
+    font-weight: 300; 
+    color: var(--bobinsana-pink); 
 }
 
-/* Targets the underlined "you" */
 .resonance-point h3 u {
-    font-weight: 700; /* Makes "you" bold */
-    text-decoration: underline; /* Keeps the underline */
-    
-    /* NEW: This ensures the underline stays Sage Green */
+    font-weight: 700; 
+    text-decoration: underline; 
     text-decoration-color: var(--primary-color); 
-    
-    text-underline-offset: 4px; /* Keeps the breathing room below the text */
-    text-decoration-thickness: 2px; /* Optional: makes the green line a bit more visible */
+    text-underline-offset: 4px; 
+    text-decoration-thickness: 2px; 
 }
 
 /* --- Services --- */
 .services { background-color: var(--light-bg); text-align: center; }
 .service-cards { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+
 .card { 
     flex: 1; 
     min-width: 280px; 
@@ -268,10 +313,20 @@ section {
     padding: 40px 30px; 
     border-radius: 12px; 
     text-align: center; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
     border-top: 5px solid var(--primary-color); 
     display: flex; flex-direction: column; justify-content: space-between; 
+    
+    /* SUGGESTION 3: Soft Shadows & Transitions */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
 }
+
+/* SUGGESTION 3: Hover Effect */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(225, 93, 143, 0.15); /* Bobinsana Pink soft glow */
+}
+
 .card h3 { font-size: 1.6em; margin: 0 0 5px; color: var(--secondary-color); }
 .card h4 { font-style: italic; color: var(--light-brown); margin-bottom: 20px; font-weight: 400; font-family: var(--font-heading); font-size: 1.2em; }
 .card p { margin-bottom: 20px; }
@@ -279,7 +334,7 @@ section {
 .perfect-for strong { color: var(--bobinsana-pink); display: block; margin-bottom: 5px; font-family: var(--font-heading); font-size: 1.1em; }
 .perfect-for span { font-size: 0.9em; line-height: 1.5; display: block;}
 
-/* --- Testimonials Updated --- */
+/* --- Testimonials --- */
 .testimonials { background-color: var(--white); text-align: center; }
 .testimonial-grid { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
 
@@ -290,7 +345,6 @@ section {
     padding: 20px; 
 }
 
-/* 1. This is the DEFAULT style (Alyssa's quote) using Caveat */
 .testimonial-item p {
     font-family: 'Caveat', cursive;
     font-size: 1.8em;
@@ -299,7 +353,6 @@ section {
     font-style: normal;
 }
 
-/* 2. This is the SPECIFIC style for Hefker's quote using Patrick Hand */
 .testimonial-item p.patrick-font {
     font-family: 'Patrick Hand', cursive;
     font-size: 1.8em; 
@@ -328,125 +381,26 @@ section {
     text-transform: uppercase; 
     letter-spacing: 1px; 
 }
+
 /* --- About --- */
-.about-me { background-color: var(--primary-color); color: var(--light-bg); text-align: center; }
+.about-me { background-color: var(--primary-color); color: var(--light-bg); text-align: center; padding-top: 40px; }
 .about-me h2 { color: var(--white); }
 .about-content-wrapper { max-width: 850px; margin: 0 auto 40px; }
 .about-paragraph { font-size: 1.1em; color: var(--white); margin-bottom: 25px; text-align: left; }
 .about-paragraph strong { font-weight: 700; color: #E8F5E9; }
+
+/* SUGGESTION 7: Drop Cap */
+.drop-cap {
+    float: left;
+    font-family: var(--font-heading);
+    font-size: 3.8em;
+    line-height: 0.7;
+    padding-top: 4px;
+    padding-right: 12px;
+    padding-left: 3px;
+    color: var(--light-brown); /* Gold color for contrast on green */
+    font-weight: 700;
+}
+
 .credentials-list { list-style: none; padding: 0; text-align: left; margin: 30px 0; border-left: 2px solid rgba(255,255,255,0.3); padding-left: 20px; }
-.credentials-list li { margin-bottom: 10px; font-family: var(--font-heading); font-size: 1.2em; color: var(--white); }
-.about-photos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
-.about-photos img { width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); object-fit: cover; }
-
-/* --- Process --- */
-.process-section { background-color: var(--light-bg); text-align: center; padding-bottom: 20px;}
-.process-steps { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
-.step { max-width: 250px; position: relative; }
-.step-number { width: 50px; height: 50px; background-color: var(--bobinsana-pink); color: white; border-radius: 50%; font-family: var(--font-heading); font-size: 1.5em; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
-.step h3 { font-size: 1.2em; margin-bottom: 10px; color: var(--secondary-color); }
-.step p { font-size: 0.9em; line-height: 1.5; }
-
-/* --- Booking & Contact --- */
-.booking-section { text-align: center; background-color: var(--white); }
-.booking-intro { max-width: 700px; margin: 0 auto 40px; font-size: 1.1em; }
-
-.booking-container {
-    max-width: 900px; margin: 0 auto;
-    display: flex; flex-direction: column; gap: 50px;
-}
-
-.direct-booking-box {
-    background-color: var(--light-bg);
-    border: 2px solid var(--primary-color);
-    border-radius: 12px;
-    padding: 40px;
-    text-align: center;
-}
-.direct-booking-box h3 { margin-top: 0; color: var(--primary-color); }
-
-.booking-divider {
-    display: flex; align-items: center; justify-content: center; gap: 20px;
-    font-family: var(--font-heading); font-size: 1.5em; color: var(--light-brown);
-}
-.booking-divider::before, .booking-divider::after {
-    content: ""; display: block; width: 100px; height: 1px; background-color: #ddd;
-}
-
-.consultation-form-wrapper {
-    max-width: 650px; margin: 0 auto; width: 100%;
-    background-color: var(--light-bg); padding: 40px; border-radius: 20px;
-    text-align: left;
-}
-
-.form-group { margin-bottom: 25px; }
-.form-group label { display: block; margin-bottom: 8px; font-family: var(--font-heading); font-size: 1.3em; color: var(--secondary-color); }
-.form-group input, .form-group textarea { 
-    width: 100%; padding: 15px; 
-    border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; 
-    font-family: var(--font-body); font-size: 1rem; outline: none; transition: 0.3s;
-}
-.form-group input:focus, .form-group textarea:focus {
-    border-color: var(--bobinsana-pink); box-shadow: 0 0 8px rgba(212, 106, 155, 0.15);
-}
-
-footer { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 40px 20px; }
-footer a { color: #fff; opacity: 0.8; }
-
-/* --- MOBILE & RESPONSIVE FIXES --- */
-@media (max-width: 768px) {
-    /* Menu Active State - Slide Down/Out */
-    .navbar { padding: 0 20px; justify-content: space-between; }
-    
-    .hamburger { display: block; z-index: 1001; }
-    
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    .nav-links {
-        position: fixed;
-        left: -100%;
-        top: var(--nav-height);
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        height: calc(100vh - var(--nav-height));
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-        padding-top: 40px;
-        gap: 40px;
-    }
-
-    .nav-links.active { left: 0; }
-    
-    .nav-links a { font-size: 1.5em; display: block; }
-
-    /* Font Size Adjustments */
-    .hero-content h1 { font-size: 2.5em; } 
-    .section-title-green { font-size: 1.5em; }
-    
-    /* Spacing Fixes */
-    .header-inline { gap: 10px; }
-    
-    /* Form & Box Padding Fixes */
-    .direct-booking-box { padding: 30px 20px; }
-    .consultation-form-wrapper { padding: 30px 20px; }
-    
-    /* Divider Fix */
-    .booking-divider::before, .booking-divider::after { width: 40px; }
-    
-    /* Steps Stack */
-    .process-steps { flex-direction: column; align-items: center; gap: 30px; }
-    
-    /* Card Width Fix */
-    .card { width: 100%; min-width: auto; }
-
-    /* Fix interactive gate on mobile */
-    .interactive-gate { padding: 15px; }
-    .revealed-content { padding: 0 10px; padding-top: 15px; }
-
-}
-
-
+.credentials-list li { margin-bottom: 10px; font-family: var(--font-heading); font-size:
